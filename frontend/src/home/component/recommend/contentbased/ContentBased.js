@@ -7,9 +7,9 @@ export default function ContentBased({ loading, idx }) {
   const movieLists = useSelector((state) => state.home.movieLists);
   const isLoading = useSelector((state) => state.home.isLoading);
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (movieLists && movieLists.length === 0) {
-      dispatch(actions.requestMovieList());
+  useEffect(() =>{
+    if (movieLists.length === 0){
+      dispatch(actions.requestMovieList(0, 0));
     }
   }, []);
 

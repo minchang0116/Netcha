@@ -7,9 +7,9 @@ export default function PopularBased({ loading, idx }) {
   const movieLists = useSelector((state) => state.home.popularMovieLists);
   const isLoading = useSelector((state) => state.home.isPopularLoading);
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (movieLists && movieLists.length === 0) {
-      dispatch(actions.requestPopularMovieList());
+  useEffect(() =>{
+    if (movieLists.length === 0){
+      dispatch(actions.requestPopularMovieList(0));
     }
   }, []);
 
